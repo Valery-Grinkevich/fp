@@ -1,14 +1,16 @@
-# fp1
+# Valery Grinkevich FP: Lab1
 
-A Clojure library designed to ... well, that part is up to you.
+## Installation
+
+Download ZIP-archive and unpack
 
 ## Usage
 
-FIXME
+    $ lein run e
 
-## License
+## Options
 
-Copyright © 2014 FIXME
+e => Euclide distance function 
+h => Hamming distance function
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Copyright © 2014 Valery Grinkevich
