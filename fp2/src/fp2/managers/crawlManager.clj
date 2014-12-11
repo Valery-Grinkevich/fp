@@ -21,9 +21,13 @@
   )
 )
 
+(defn Swap [parentNode, childNode]
+  (swap! (:childrenNodes parentNode) conj childNode)
+)
+
 (defn GetChildNode [parentNode, depth, url, urls, location, status]
   (let [childNode(CreateNewNode parentNode (atom []) depth url urls location status)]
-    (swap! (:childrenNodes parentNode) conj childNode)
+    (Swap parentNode childNode)
     childNode
   )
 )
