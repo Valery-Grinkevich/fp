@@ -11,7 +11,7 @@
 )
 
 (deftest TestNotFound
-  (testing "Testring "
+  (testing "Testring 404 error"
     (let [httpResponse (HtmlManager/GetPageContent "http://www.getnetgoing.com/demo/errors/NotFound.html")]
       (is (= 404 (:status response)))
     )
