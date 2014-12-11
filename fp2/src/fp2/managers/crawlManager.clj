@@ -1,5 +1,6 @@
 (ns fp2.managers.crawlManager
   (:require [fp2.managers.htmlManager :as HtmlManager]
+            [fp2.managers.outputManager :as IoManager]
   )
 )
 
@@ -53,9 +54,10 @@
   (CreateNewNode nil (atom []) depth "RootNode" urls nil nil)
 )
 
-(defn Crawl [crawlDepth, crawlUrls]
-  (let [rootNode (GetRootNode crawlDepth crawlUrls)]
+(defn Crawl [crawlDepth]
+  (let [crawlUrls (IoManager/ReadFile)
+        rootNode (GetRootNode crawlDepth crawlUrls)]
     (RunTreeTraversal rootNode crawlUrls crawlDepth)
-    rootNode
+    (IoManager/Print rootNode)
   )
 )
